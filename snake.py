@@ -25,6 +25,13 @@ class Snake:
         mahmut.goto(position)
         self.segments.append(mahmut)
 
+    def reset_snake(self):
+        for seg in self.segments:
+            seg.goto(10000, 10000)
+        self.segments.clear()
+        self.s_create()
+        self.head = self.segments[0]
+
     def extend(self):
         self.add_snake(self.segments[-1].position())
 
